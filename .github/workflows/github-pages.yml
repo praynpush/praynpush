@@ -52,7 +52,7 @@ jobs:
           hugo \
             --gc \
             --minify \
-            --baseURL "https://praynpush.github.io/praynpush/"
+            --baseURL "https://praynpush.github.io/"
 
       - name: Run Pagefind
         run: pnpm run pagefind
