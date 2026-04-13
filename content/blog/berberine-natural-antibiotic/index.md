@@ -2,8 +2,7 @@
 title: 小檗碱（Berberine）：被低估的天然"抗生素"和代谢调节剂
 summary: 小檗碱是从多种植物中提取的天然生物碱，具有强大的抗菌、降血糖和降血脂作用。研究显示其效果在某些方面可与处方药相媲美。
 date: 2026-04-06
-authors:
-  - me
+image: featured.jpg
 tags:
   - 小檗碱
   - 天然抗生素

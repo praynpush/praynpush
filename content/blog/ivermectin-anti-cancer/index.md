@@ -2,8 +2,7 @@
 title: 伊维菌素（Ivermectin）的抗癌机制：被忽视的科学发现
 summary: 探索伊维菌素如何通过多种分子途径抑制癌细胞生长，以及为什么这一发现尚未被广泛应用于临床治疗。
 date: 2026-04-10
-authors:
-  - me
+image: featured.jpg
 tags:
   - 伊维菌素
   - 抗癌

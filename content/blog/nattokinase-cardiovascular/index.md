@@ -2,8 +2,7 @@
 title: 纳豆激酶（Nattokinase）：日本长寿秘密中的心血管守护者
 summary: 纳豆激酶是从传统日本食品纳豆中提取的天然酶类，研究表明它具有溶解血栓、降低血压等心血管保护作用。了解这种被低估的天然健康成分。
 date: 2026-04-07
-authors:
-  - me
+image: featured.jpg
 tags:
   - 纳豆激酶
   - 心血管健康
