@@ -1,7 +1,7 @@
 [zh]
     languageName = "简体中文"
-    title        = "My Personal Blog"
+    title        = "Pray&Push"
     weight       = 1
 
     [zh.params.sidebar]
-        subtitle = "Personal Blog"
+        subtitle = "探索生活与健康"
