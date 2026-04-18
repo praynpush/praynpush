@@ -1,21 +1,11 @@
 {
-  "name": "hugo-blox-academic-cv-starter",
+  "name": "praynpush-blog",
   "version": "1.0.0",
-  "private": true,
-  "packageManager": "pnpm@10.14.0",
-  "description": "Academic CV starter template for Hugo Blox with Tailwind CSS v4",
+  "description": "Personal health and lifestyle blog using Hugo Stack theme.",
   "scripts": {
     "dev": "hugo server --disableFastRender",
-    "build": "hugo --minify && pnpm run pagefind",
-    "pagefind": "pagefind --site public"
+    "build": "hugo --gc --minify"
   },
-  "dependencies": {
-    "@tailwindcss/typography": "^0.5.10",
-    "pagefind": "^1.4.0",
-    "preact": "^10.27.2"
-  },
-  "devDependencies": {
-    "@tailwindcss/cli": "^4.2.2",
-    "tailwindcss": "^4.2.2"
-  }
+  "author": "praynpush",
+  "license": "MIT"
 }

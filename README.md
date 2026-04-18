@@ -1,60 +1,48 @@
-# My Personal Blog
+# Pray&Push Personal Blog
 
-A personal blog built with [Hugo Blox](https://hugoblox.com/) and hosted on [GitLab Pages](https://docs.gitlab.com/ee/user/project/pages/).
+Welcome to the official repository of **Pray&Push**, a personal blog focused on health, longevity, and lifestyle.
 
-## Quick Start
+## 🚀 Modern Features
+
+This blog is built on a highly customized version of the [Hugo Stack](https://github.com/CaiJimmy/hugo-theme-stack) theme, with several exclusive enhancements:
+
+### 🎙️ Automatic Edge TTS (Podcast Mode)
+Every blog post is automatically converted into high-quality audio using **Microsoft Edge TTS (Xiaoxiao Neural)**. 
+- **How it works**: A GitHub Action triggers on every push, runs a Python script to generate the audio, and embeds a premium audio player directly into the article.
+- **Listen while you read**: No need to download anything; just click play at the top of any post.
+
+### 🎥 Lite YouTube Embeds
+We've implemented a custom "Click-to-Play" YouTube component for article covers.
+- **Performance**: Loads a lightweight image overlay first, preserving page speed.
+- **Seamless**: Replaces the cover image with an auto-playing video only when clicked.
+
+### 📱 Fully Responsive & Optimized
+- Optimized OpenGraph and Twitter Cards for social media sharing.
+- High-performance image processing using Hugo's built-in tools.
+
+## 🛠️ Development
 
 ### Prerequisites
+- [Hugo Extended](https://gohugo.io/installation/) (v0.160+)
+- [Git](https://git-scm.com/)
 
-- [Hugo Extended](https://gohugo.io/installation/) (v0.159+)
-- [Go](https://golang.org/dl/)
-- [Node.js](https://nodejs.org/) (for TailwindCSS)
-
-### Local Development
-
+### Local Setup
 ```bash
-# Install dependencies
-npm install
+# Clone the repository
+git clone --recursive https://github.com/praynpush/praynpush.github.io.git
 
-# Start local server
-hugo server --buildDrafts
+# Start local development server
+hugo server --disableFastRender
 ```
 
-Then visit [http://localhost:1313](http://localhost:1313).
+## 🏗️ Deployment
+The site is automatically deployed to **GitHub Pages** via GitHub Actions whenever changes are pushed to the `master` branch.
 
-### Build
+## 📂 Project Structure
+- `content/blog/`: Markdown source for blog posts.
+- `themes/hugo-theme-stack/`: Our customized fork of the Stack theme.
+- `scripts/`: Automation scripts (e.g., TTS generation).
+- `.github/workflows/`: CI/CD pipelines for TTS generation and site deployment.
 
-```bash
-hugo --gc --minify
-```
-
-## Deployment to GitLab Pages
-
-The site is automatically deployed to GitLab Pages using the `.gitlab-ci.yml` configuration.
-
-1. Push your code to GitLab:
-   ```bash
-   git remote add origin git@gitlab.com:<your-username>/<your-repo>.git
-   git branch -M main
-   git push -u origin main
-   ```
-
-2. GitLab CI/CD will automatically build and deploy your site.
-
-3. Your site will be available at: `https://<your-username>.gitlab.io/<your-repo>/`
-
-## Structure
-
-```
-├── config/_default/    # Hugo configuration
-├── content/            # Your content (blog posts, pages, etc.)
-├── assets/             # CSS, JS, and media files
-├── layouts/            # Custom layouts (optional)
-├── static/             # Static files
-├── hugoblox.yaml       # Hugo Blox configuration
-└── .gitlab-ci.yml      # GitLab CI/CD configuration
-```
-
-## License
-
-This project is licensed under the [MIT License](LICENSE.md).
+---
+© 2026 **Pray&Push**. Built with ❤️ and Hugo.
