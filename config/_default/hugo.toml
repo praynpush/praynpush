@@ -1,6 +1,6 @@
 baseURL                = "https://praynpush.github.io/"
 languageCode           = "zh-cn"
-title                  = "My Personal Blog"
+title                  = "Pray&Push"
 defaultContentLanguage = "zh"
 hasCJKLanguage         = true
 theme                  = "hugo-theme-stack"
