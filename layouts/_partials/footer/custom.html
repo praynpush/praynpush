@@ -1,0 +1,157 @@
+{{ $sw := resources.Get "sw.js" | resources.ExecuteAsTemplate "sw.js" now.Unix }}
+<script>
+if ('serviceWorker' in navigator) {
+  window.addEventListener('load', () => {
+    navigator.serviceWorker.register('{{ $sw.RelPermalink }}').then(reg => {
+      reg.addEventListener('updatefound', () => {
+        const newWorker = reg.installing;
+        newWorker.addEventListener('statechange', () => {
+          if (newWorker.state === 'installed' && navigator.serviceWorker.controller) {
+            // New content is available, show the update toast
+            const toast = document.getElementById('pwa-update-toast');
+            if (toast) {
+                toast.classList.add('show');
+            }
+          }
+        });
+      });
+    }).catch(err => {
+      console.log('ServiceWorker registration failed: ', err);
+    });
+
+    let refreshing = false;
+    navigator.serviceWorker.addEventListener('controllerchange', () => {
+      if (!refreshing) {
+        window.location.reload();
+        refreshing = true;
+      }
+    });
+
+    const updateBtn = document.getElementById('pwa-update-btn');
+    if (updateBtn) {
+        updateBtn.addEventListener('click', () => {
+          navigator.serviceWorker.getRegistration().then(reg => {
+            if (reg && reg.waiting) {
+              reg.waiting.postMessage('skipWaiting');
+            }
+          });
+        });
+    }
+    
+    const closeBtn = document.getElementById('pwa-close-btn');
+    if (closeBtn) {
+        closeBtn.addEventListener('click', () => {
+            const toast = document.getElementById('pwa-update-toast');
+            if (toast) {
+                toast.classList.remove('show');
+            }
+        });
+    }
+  });
+}
+</script>
+
+<style>
+#pwa-update-toast {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: var(--card-background);
+    color: var(--body-text-color);
+    padding: 15px 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    z-index: 9999;
+    transform: translateY(150%);
+    opacity: 0;
+    transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275), opacity 0.3s ease;
+    border: 1px solid var(--card-border-color, rgba(0,0,0,0.05));
+}
+
+[data-scheme="dark"] #pwa-update-toast {
+    box-shadow: 0 4px 12px rgba(0,0,0,0.5);
+    border: 1px solid rgba(255,255,255,0.1);
+}
+
+#pwa-update-toast.show {
+    transform: translateY(0);
+    opacity: 1;
+}
+
+.pwa-toast-content {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.pwa-toast-title {
+    font-weight: bold;
+    font-size: 1rem;
+}
+
+.pwa-toast-message {
+    font-size: 0.85rem;
+    opacity: 0.8;
+}
+
+.pwa-toast-buttons {
+    display: flex;
+    gap: 8px;
+    margin-left: 10px;
+}
+
+#pwa-update-btn {
+    background-color: var(--accent-color);
+    color: #fff;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    font-weight: 500;
+    transition: opacity 0.2s;
+}
+
+#pwa-update-btn:hover {
+    opacity: 0.9;
+}
+
+#pwa-close-btn {
+    background-color: transparent;
+    color: var(--body-text-color);
+    border: 1px solid var(--card-border-color, rgba(0,0,0,0.1));
+    padding: 8px 12px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    opacity: 0.7;
+    transition: opacity 0.2s, background-color 0.2s;
+}
+
+[data-scheme="dark"] #pwa-close-btn {
+    border: 1px solid rgba(255,255,255,0.2);
+}
+
+#pwa-close-btn:hover {
+    opacity: 1;
+    background-color: rgba(0,0,0,0.05);
+}
+
+[data-scheme="dark"] #pwa-close-btn:hover {
+    background-color: rgba(255,255,255,0.05);
+}
+</style>
+
+<div id="pwa-update-toast">
+    <div class="pwa-toast-content">
+        <span class="pwa-toast-title">发现新内容</span>
+        <span class="pwa-toast-message">网站已发布更新，请刷新以查看最新内容。</span>
+    </div>
+    <div class="pwa-toast-buttons">
+        <button id="pwa-close-btn">忽略</button>
+        <button id="pwa-update-btn">立即刷新</button>
+    </div>
+</div>
