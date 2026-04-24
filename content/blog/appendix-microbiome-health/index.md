@@ -27,8 +27,6 @@ tags:
 
 长久以来，阑尾（Appendix）在医学界和大众眼中，似乎只是一个“随时可能发炎、切了也没什么大碍”的进化遗留物。然而，随着现代微生物组学和免疫学的飞速发展，科学家们发现，这个看似多余的小盲管，实际上是我们身体内一个精密的“生态保护区”和“免疫训练营”。
 
----
-
 ## 一、 有益肠道菌群的“安全屋”与“蓄水池”
 
 人类的肠道中居住着数以万亿计的微生物，它们在消化、维生素合成以及抵御病原体方面发挥着至关重要的作用。然而，当人体遭遇严重腹泻（如霍乱、痢疾）或接受广谱抗生素治疗时，肠道内的菌群会被大量“冲刷”或杀死。
@@ -67,7 +65,7 @@ tags:
 
 从“随时可抛弃的盲肠残余”到“肠道健康的守护者和免疫中枢”，对阑尾认识的巨大转变，正是人类科学逐步向真理靠近的过程。它提醒我们在面对生命的奥秘时应当保持谦卑。保护好我们的身体，或许就从重新认识并感恩造物主赋予我们的这个奇妙的阑尾开始。
 
----
+<div aria-hidden="true">
 
 ### 📚 参考文献 (References)
 
@@ -76,3 +74,5 @@ tags:
 3. Imhann, F., Vich Vila, A., Bonder, M. J., et al. (2018). Interplay of host genetics and gut microbiota underlying the onset and clinical presentation of inflammatory bowel disease. *Gut*, 67(1), 108-119.
 4. Routy, B., Le Chatelier, E., Derosa, L., et al. (2018). Gut microbiome influences efficacy of PD-1-based immunotherapy against epithelial tumors. *Science*, 359(6371), 91-97.
 5. 《阑尾微生物组在健康和疾病状态下的功能图谱》(Functional landscape of the appendix microbiome in health and disease) - 综合综述文献。
+
+</div>
