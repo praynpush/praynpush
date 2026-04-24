@@ -1,3 +1,3 @@
-[submodule "themes/hugo-theme-stack"]
-	path = themes/hugo-theme-stack
+[submodule "themes/hugo-theme-praynpush"]
+	path = themes/hugo-theme-praynpush
 	url = https://github.com/praynpush/hugo-theme-praynpush.git

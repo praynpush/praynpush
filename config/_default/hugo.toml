@@ -3,7 +3,7 @@ languageCode           = "zh-cn"
 title                  = "Pray&Push"
 defaultContentLanguage = "zh"
 hasCJKLanguage         = true
-theme                  = "hugo-theme-stack"
+theme                  = "hugo-theme-praynpush"
 
 [pagination]
     pagerSize = 10
